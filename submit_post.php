@@ -1,6 +1,6 @@
 <?php
 
-require("connection.php"); // Include your database connection details
+require("connection.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = mysqli_real_escape_string($conn, $_POST["title"]);
@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   mysqli_close($conn);
 } else {
-  // Not a POST request, potentially redirect or display an error message
   echo "Invalid request method.";
 }
 

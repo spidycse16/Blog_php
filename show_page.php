@@ -8,7 +8,7 @@
 <body>
   <h1>All Posts</h1>
   <?php
-  require("connection.php"); // Include your database connection details
+  require("connection.php"); 
 
   $sql = "SELECT * FROM posts";
   $result = mysqli_query($conn, $sql);
