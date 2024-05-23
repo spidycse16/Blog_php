@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <a href="show_page.php">Show posts</a>
     <a href="create.php">Create Blog</a>
-    <button name="follow">Follow</button>
+    <a href="follow_list.php">Follow People</a>
     <a href="logout.php">Logout</a>
 
 </body>

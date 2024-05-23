@@ -23,12 +23,15 @@ if(strlen($password)<8)
   if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
     $email= "";
   }
-  echo $username.$email.$password;
+ // echo $username.$email.$password;
 $sql="insert into users(username,email,password) values('$username','$email','$password')";
 if($username && $email && $password)
 $result=mysqli_query($conn,$sql);
-if($result)
-echo "data inserted successfully";
-else
-echo "Failed to insert data";
+if ($result) {
+  echo "Registration successful! You will be redirected to the login page in 5 seconds.";
+  header("Refresh: 5; url=login.php"); 
+} else {
+  echo "Failed to register. Please try again.";
+}
+
 ?>
