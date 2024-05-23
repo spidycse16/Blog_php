@@ -8,8 +8,8 @@
 <body>
     <h1>Welcome to Blog App</h1>
     <p>
-        <a href="login.php"><button>Login</button></a>
-        <a href="register.php"><button>Register</button></a>
+        <a href="Views/login.php"><button>Login</button></a>
+        <a href="Views/register.php"><button>Register</button></a>
     </p>
 </body>
 </html>

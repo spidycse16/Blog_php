@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("connection.php");
+require("../Connection/connection.php");
 $user_id=$_SESSION['user_id'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = mysqli_real_escape_string($connect, $_POST["title"]);

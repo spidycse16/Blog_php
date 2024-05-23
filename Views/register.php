@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Register</h1>
-    <form method="post" action="loginHandler.php" enctype="multipart/form-data"> 
+    <form method="post" action="Controls/loginHandler.php" enctype="multipart/form-data"> 
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
         <label for="email">Email:</label>

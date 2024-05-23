@@ -9,7 +9,7 @@
   <h1>All Posts</h1>
   <?php
   session_start();
-  require("connection.php"); 
+  require("../Connection/connection.php"); 
   $user_id=$_SESSION['user_id'];
   $obj=new ShowPosts($connect);
   $lists=$obj->getFollowers($user_id);

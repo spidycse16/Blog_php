@@ -2,7 +2,7 @@
 
 session_start();
 
-include('connection.php');
+include('../Connection/connection.php');
 //$email = $_POST['email'];
 //$entered_password = $_POST['password'];
 $login=new loginController($connect);
@@ -35,7 +35,7 @@ class loginController{
         echo "Welcome back!";
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['username']=$row['username'];
-        header("Location: mainpage.php");
+        header("Location: ../Views/mainpage.php");
         exit;
       } else {
         echo "Invalid password.";

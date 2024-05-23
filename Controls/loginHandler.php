@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include 'Connection/connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = test_input($_POST["username"]);
   $email = test_input($_POST["email"]);
@@ -57,7 +57,7 @@ if ($username && $email && $password)
   $result = mysqli_query($this->connect, $sql);
 if ($result) {
   echo "Registration successful! You will be redirected to the login page in 5 seconds.";
-  header("Refresh: 5; url=login.php");
+  header("Refresh: 5; url=Views/login.php");
 } else {
   echo "Failed to register. Please try again.";
 }

@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Create New Post</h1>
-  <form action="submit_post.php" method="post" enctype="multipart/form-data">
+  <form action="../Controls/submit_post.php" method="post" enctype="multipart/form-data">
     <label for="title">Title:</label>
     <input type="text" name="title" placeholder="Enter your post title" required><br><br>
 

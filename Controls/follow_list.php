@@ -1,9 +1,9 @@
 <?php
-include 'connection.php';
+include '../Connection/connection.php';
 session_start();
 if(!isset($_SESSION['user_id']))
 {
-  header('Location: login.php');
+  header('Location: Views/login.php');
 }
 $user_id = $_SESSION['user_id'];
 $follow=new followList($connect);
@@ -33,7 +33,7 @@ class followList{
     $following_id=$row['id'];
     echo "<div class='user-card'>";
     echo "  <p>$user_name</p>";
-    echo "  <form action='follow.php' method='post'>";
+    echo "  <form action='../Controls/follow.php' method='post'>";
     echo "    <input type='hidden' name='following_id' value='$following_id'>";
     echo "    <input type='hidden' name='following_name' value='$user_name'>";
       echo "    <button type='submit'>Follow</button>";

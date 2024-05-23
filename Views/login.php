@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="loginController.php" method="post">
+    <form action="../Controls/loginController.php" method="post">
         <label>Emal:</label>
         <input type="text" name="email">
         <br>
