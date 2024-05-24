@@ -36,37 +36,45 @@
       return $following_list;
     }
 
-    public function show_posts($following_list)
-    {
-      if(count($following_list)==0){
-        echo "NO followers has posted anything yet!!";
-      }
-      else
-      {
-        $cnt=1;
-        $sql = "SELECT * FROM posts WHERE who_posted IN (" . implode(",", $following_list) . ") And type='public'";
-        $filter_result = mysqli_query($this->connect, $sql);
-        if(mysqli_num_rows($filter_result)> 0){
-          while($row=mysqli_fetch_array($filter_result)){
-            echo "<h2>This is post {$cnt}</h2>";
-            $cnt++;
-            $title=$row['title'];
-            $writer=$row['writer'];
-            $post_type=$row['type'];
-            $description=$row['description'];
-            echo "$title";
-            echo "<br> <br>";
-            echo "$writer";
-            echo "<br> <br>";
-            echo "$post_type";
-            echo "<br> <br>";
-            echo "$description";
-            echo "<br> <br>";
-      
+    public function show_posts($following_list) {
+      if (count($following_list) == 0) {
+          echo "NO followers have posted anything yet!";
+      } else {
+          $cnt = 1;
+          $sql = "SELECT *, p.image AS post_image FROM posts AS p WHERE who_posted IN (" . implode(",", $following_list) . ") AND type='public'";
+          $filter_result = mysqli_query($this->connect, $sql);
+          if (mysqli_num_rows($filter_result) > 0) {
+              while ($row = mysqli_fetch_array($filter_result)) {
+                  echo "<h2>This is post {$cnt}</h2>";
+                  $cnt++;
+                  $title = $row['title'];
+                  $writer = $row['writer'];
+                  $post_type = $row['type'];
+                  $description = $row['description'];
+                  $image = $row['image'];
+  
+                  echo "$title";
+                  echo "<br> <br>";
+                  echo "$writer";
+                  echo "<br> <br>";
+                  echo "$post_type";
+                  echo "<br> <br>";
+                  echo "$description";
+                  echo "<br> <br>";
+  
+                  if (!empty($image)) {
+                    
+                      echo "<img src='images/$image'  alt='Post Image'> ";
+                  } else {
+                      echo "No image available for this post.";
+                  }
+  
+                  echo "<br> <br>";
+              }
           }
-        }
       }
-    }
+  }
+  
   }
 
   ?>

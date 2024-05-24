@@ -42,6 +42,7 @@ class validate
       $password = "";
     }
   }
+
 }
 
 class register{

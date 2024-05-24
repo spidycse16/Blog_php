@@ -31,4 +31,6 @@ class DatabaseConnection {
 
 $instance=DatabaseConnection::getInstance("localhost","root","","php");
 $connect=$instance->getConnection();
+
+
 ?>
