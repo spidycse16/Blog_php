@@ -8,15 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $obj->specific_post($post_id);
     if ($result) {
       $post = $result->fetch_assoc();
+      include('../Views/header.php');
       ?>
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Post</title>
-      </head>
-      <body>
         <h1>Edit Post</h1>
         <form action="../orm/edit_control.php" method="post" enctype="multipart/form-data">
           <input type="hidden" name="post_id" value="<?php echo $post['id']; ?>">  <label for="title">Title:</label>
@@ -37,8 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
           <input type="file" name="image"><br><br>  <button type="submit">Update Post</button>
         </form>
-      </body>
-      </html>
+        <?php
+         include('../Views/footer.php')
+        ?>
       <?php
     } else {
       echo "Post with ID $post_id not found.";

@@ -6,13 +6,9 @@ $obj=new Post($connect);
 $posts=$obj->all($user_id);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php
+include('../Views/header.php')
+?>
 <body>
     <h1>Delete posts</h1>
     <?php if (empty($posts)) : ?>
@@ -27,5 +23,6 @@ $posts=$obj->all($user_id);
             </form>
             <?php endforeach;?>
             <?php endif; ?>
-</body>
-</html>
+            <?php
+include('../Views/footer.php')
+?>
