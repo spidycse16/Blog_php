@@ -1,6 +1,6 @@
 <?php
 include('../orm/orm.php');
-$obj = new Orm($connect);
+$obj = new Post($connect);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $post_id = isset($_POST['post_id']) ? intval($_POST['post_id']) : null;
 

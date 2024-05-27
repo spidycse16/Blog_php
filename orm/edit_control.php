@@ -10,7 +10,7 @@ $file_name=$_FILES['image']['name'];
 $temp_name = $_FILES['image']['tmp_name'];
 $folder='images/'.$file_name;
 
-$obj=new Orm($connect);
+$obj=new Post($connect);
 $obj->update($post_id,$title,$writer,$post_type,$description,$file_name);
 
 ?>

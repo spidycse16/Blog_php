@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title">Create Post</title>
-</head>
-<body>
+<?php
+include('../Views/header.php')
+?>
   <h1>Create New Post</h1>
   <form action="../Controls/submit_post.php" method="post" enctype="multipart/form-data">
     <label for="title">Title:</label>
@@ -25,5 +20,6 @@
 
     <button type="submit">Create Post</button>
   </form>
-</body>
-</html>
+  <?php
+include('../Views/footer.php')
+?>

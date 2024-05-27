@@ -2,7 +2,7 @@
 include('../orm/orm.php');
 session_start();
 $user_id=$_SESSION['user_id'];
-$obj=new orm($connect);
+$obj=new Post($connect);
 $posts=$obj->all($user_id);
 ?>
 

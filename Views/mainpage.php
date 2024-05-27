@@ -7,12 +7,9 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Homepage</title>
-</head>
-<body>
+<?php
+include('../Views/header.php')
+?>
   <h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
 
     <a href="../Controls/show_page.php">Show posts</a> <br> <br>
@@ -23,5 +20,6 @@ if (!isset($_SESSION['user_id'])) {
     <a href="../orm/orm_edit_view.php">Edit by orm</a>
     <a href="../Controls/logout.php">Logout</a><br> <br>
 
-</body>
-</html>
+    <?php
+include('../Views/footer.php')
+?>

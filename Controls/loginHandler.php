@@ -1,5 +1,5 @@
 <?php
-include 'Connection/connection.php';
+include '../Connection/connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = test_input($_POST["username"]);
   $email = test_input($_POST["email"]);

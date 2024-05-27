@@ -4,7 +4,7 @@ session_start();
 
 include('../orm/orm.php');
 include('../Controls/loginHandler.php');
-$post=new orm($connect);
+$post=new Post($connect);
 $title=$_POST['title'];
 $writer=$_POST['writer'];
 $post_type=$_POST['type'];
